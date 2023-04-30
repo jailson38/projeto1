@@ -1,2 +1,25 @@
-"C:\Users\jails\OneDrive\Área de Trabalho\Logico-jl\Lógico-jl.docx"
-"C:\Users\jails\OneDrive\Área de Trabalho\Logico-jl\L-gico-jl"
+"C:\Users\jails\OneDrive\Área de Trabalho\Logico-jl\Lógico-jl.docx/* Lógico_1: */
+
+CREATE TABLE veiculo (
+    id_veiculo int PRIMARY KEY,
+    marca vachar(50),
+    modelo vachar(50),
+    descricao vachar(100),
+    ano int,
+    placa vachar(10),
+    Cambio int,
+    Ar_condiciondo int,
+    fk_categoria_id_grupo int
+);
+
+CREATE TABLE categoria (
+    id_grupo int PRIMARY KEY,
+    nome_grupo vachar(50)
+);
+ 
+ALTER TABLE veiculo ADD CONSTRAINT FK_veiculo_2
+    FOREIGN KEY (fk_categoria_id_grupo)
+    REFERENCES categoria (id_grupo)
+    ON DELETE CASCADE;
+
+V
